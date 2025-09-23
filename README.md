@@ -40,15 +40,6 @@ In my first homework, I analyzed the **Car Fuel Efficiency dataset**. The goal w
 
 ---
 
-## Upcoming Projects
-
-- Customer Churn Prediction (Classification)
-- Decision Trees & Ensemble Learning models
-- Neural Networks & Deep Learning with PyTorch/TensorFlow
-- Model Deployment using Docker, FastAPI, AWS, and Kubernetes
-- Capstone Project (end-to-end ML project deployment)
-
----
 
 ## How to Use This Repository
 
