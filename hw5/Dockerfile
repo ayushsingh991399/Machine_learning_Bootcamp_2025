@@ -1,24 +1,11 @@
-# Use the base image with the pre-trained model
 FROM agrigorev/zoomcamp-model:2025
 
-# Set working directory
 WORKDIR /app
 
-# Copy dependency files
-COPY pyproject.toml .
-COPY uv.lock .
+COPY predict2.py ./
 
-# Install uv (the modern dependency manager)
-RUN pip install uv
+RUN pip install --no-cache-dir fastapi uvicorn pydantic scikit-learn
 
-# Sync dependencies (this installs FastAPI, Uvicorn, etc.)
-RUN uv sync
+EXPOSE 3000
 
-# Copy your FastAPI app
-COPY app.py .
-COPY pipeline_v1.bin .
-# Expose port 8000
-EXPOSE 8000
-
-# Run the FastAPI server
-CMD ["uv", "run", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "predict2:app", "--host", "0.0.0.0", "--port", "3000"]
